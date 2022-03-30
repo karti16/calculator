@@ -9,33 +9,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,500;1,300&display=swap"
       rel="stylesheet"
     />
     <title>Calculator</title>
   </head>
   <body>
     <div class="cal-container">
-      <div class="screen">12121 + 332</div>
-      <button id="clear" class="btn ctrl">clear</button>
-      <button id="undo" class="btn ctrl">undo</button>
-      <button id="div" class="btn ctrl">/</button>
-      <button id="sub" class="btn ctrl">-</button>
-      <button id="seven" class="btn">7</button>
-      <button id="eight" class="btn">8</button>
-      <button id="nine" class="btn">9</button>
-      <button id="mul" class="btn ctrl">x</button>
-      <button id="four" class="btn">4</button>
-      <button id="five" class="btn">5</button>
-      <button id="six" class="btn">6</button>
-      <button id="add" class="btn ctrl">+</button>
-      <button id="one" class="btn">1</button>
-      <button id="two" class="btn">2</button>
-      <button id="three" class="btn">3</button>
-      <button id="per" class="btn ctrl">%</button>
-      <button id="zero" class="btn">0</button>
+      <div class="screen"></div>
+      <button id="clear" class="btn">clear</button>
+      <button id="undo" class="btn">undo</button>
+      <button id="div" class="btn operator">÷</button>
+      <button id="sub" class="btn operator">-</button>
+      <button id="seven" class="btn int">7</button>
+      <button id="eight" class="btn int">8</button>
+      <button id="nine" class="btn int">9</button>
+      <button id="mul" class="btn operator">x</button>
+      <button id="four" class="btn int">4</button>
+      <button id="five" class="btn int">5</button>
+      <button id="six" class="btn int">6</button>
+      <button id="add" class="btn operator">+</button>
+      <button id="one" class="btn int">1</button>
+      <button id="two" class="btn int">2</button>
+      <button id="three" class="btn int">3</button>
+
+      <button id="zero" class="btn int">0</button>
       <button id="decimal" class="btn">.</button>
-      <button id="equal" class="btn ctrl">=</button>
+      <button id="equal" class="btn">=</button>
+      <span class="divbyzero"></span>
     </div>
   </body>
 </html>
