@@ -3,6 +3,7 @@ let operator2 = "";
 let operatorString = "";
 let currentOperand;
 let result = 0;
+let decimal = false;
 let display = document.querySelector(".screen");
 
 let number = document.querySelectorAll(".int");
@@ -24,6 +25,9 @@ clearbtn.addEventListener("mousedown", clear);
 let undobtn = document.querySelector("#undo");
 undobtn.addEventListener("mousedown", undo);
 
+let decibtn = document.querySelector("#decimal");
+decibtn.addEventListener("mousedown", numberClick);
+
 window.onkeydown = function (e) {
   if (e.keyCode >= 96 && e.keyCode <= 105) {
     numberClickKeyboard(e);
@@ -43,6 +47,8 @@ window.onkeydown = function (e) {
     undo();
   } else if (e.keyCode == 46) {
     clear();
+  } else if (e.keyCode == 110) {
+    numberClickKeyboard(e);
   }
 };
 
@@ -54,14 +60,15 @@ function numberClick(e) {
     operator1 = "";
     operator2 = "";
   }
+  if (decimal == false) {
+    operatorString += e.target.innerHTML;
+    display.innerHTML = operatorString;
 
-  operatorString += e.target.innerHTML;
-  display.innerHTML = operatorString;
-
-  if (currentOperand == undefined) {
-    operator1 += e.target.innerHTML;
-  } else {
-    operator2 += e.target.innerHTML;
+    if (currentOperand == undefined) {
+      operator1 += e.target.innerHTML;
+    } else {
+      operator2 += e.target.innerHTML;
+    }
   }
 }
 function operandClick(e) {
@@ -70,10 +77,16 @@ function operandClick(e) {
     operatorString += e.target.innerHTML;
     display.innerHTML = operatorString;
     currentOperand = e.target.innerHTML;
+    decimal = false;
   }
 }
 
 function numberClickKeyboard(e) {
+  if (operatorString.length > 14) {
+    display.style.fontSize = "20px";
+    display.style.wordWrap = "break-word";
+  }
+
   if (operatorString == '<span class="divbyzero">Can\'t divide by 0</span>') {
     display.innerHTML = "";
     operatorString = "";
@@ -81,14 +94,15 @@ function numberClickKeyboard(e) {
     operator1 = "";
     operator2 = "";
   }
+  if (decimal == false) {
+    operatorString += e.key;
+    display.innerHTML = operatorString;
 
-  operatorString += e.key;
-  display.innerHTML = operatorString;
-
-  if (currentOperand == undefined) {
-    operator1 += e.key;
-  } else {
-    operator2 += e.key;
+    if (currentOperand == undefined) {
+      operator1 += e.key;
+    } else {
+      operator2 += e.key;
+    }
   }
 }
 function operandClickKeyboard(e) {
@@ -127,6 +141,7 @@ function check() {
 }
 
 function mathOperation() {
+  check();
   if (currentOperand == "+") add();
   if (currentOperand == "-") subtract();
   if (currentOperand == "x" || currentOperand == "*") multiply();

@@ -5,6 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="script.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/4c536a6bd5.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,14 +20,24 @@
       href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,500;1,300&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="shortcut icon" href="favicon.ico" />
     <title>Calculator</title>
   </head>
   <body>
     <h2>Calculator</h2>
     <div class="cal-container">
       <div class="screen"></div>
-      <button id="clear" class="btn">clear</button>
-      <button id="undo" class="btn">undo</button>
+      <button id="clear" class="btn other">AC</button>
+      <button id="undo" class="btn other">
+        <i class="fa-solid fa-delete-left"></i>
+      </button>
       <button id="div" class="btn operator">÷</button>
       <button id="sub" class="btn operator">-</button>
       <button id="seven" class="btn int">7</button>
@@ -33,11 +51,24 @@
       <button id="one" class="btn int">1</button>
       <button id="two" class="btn int">2</button>
       <button id="three" class="btn int">3</button>
-
       <button id="zero" class="btn int">0</button>
       <button id="decimal" class="btn">.</button>
-      <button id="equal" class="btn">=</button>
-      <span class="divbyzero"></span>
+      <button id="equal" class="btn other">=</button>
     </div>
+    <footer class="footer">
+      <p>
+        Copyright ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        karti
+      </p>
+      <a href="https://github.com/karti16" target="_blank">
+        <i class="fab fa-github"></i
+      ></a>
+      |<a href="https://github.com/karti16/calculator" target="_blank"
+        >Source code</a
+      >
+    </footer>
   </body>
 </html>
